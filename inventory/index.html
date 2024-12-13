@@ -497,7 +497,7 @@
     <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2024-12-14&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">city_pairs</span> <span class="o">=</span> <span class="n">MentisCityPairs</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">service_found</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">token_count</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span> <span class="s2">&quot;access-token&quot;</span><span class="p">:</span> <span class="s2">&quot;2465F5F3A2F43F69888E26F319B3DB08|10851-S|202412131347||FFFF&quot;</span><span class="p">}</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span> <span class="s2">&quot;access-token&quot;</span><span class="p">:</span> <span class="s2">&quot;TOKEN&quot;</span><span class="p">}</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">days</span><span class="p">):</span>
         <span class="n">journey_date</span> <span class="o">=</span> <span class="p">(</span><span class="n">start_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -620,7 +620,7 @@
                 <span class="s2">&quot;fromID&quot;</span><span class="p">:</span> <span class="n">pair</span><span class="o">.</span><span class="n">from_city_id</span><span class="p">,</span>
                 <span class="s2">&quot;toID&quot;</span><span class="p">:</span> <span class="n">pair</span><span class="o">.</span><span class="n">to_city_id</span><span class="p">,</span>
                 <span class="s2">&quot;journeyDate&quot;</span><span class="p">:</span> <span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-%Y&quot;</span><span class="p">),</span>
-                <span class="s2">&quot;verifyCall&quot;</span><span class="p">:</span> <span class="s2">&quot;c7d63e8679574cef9b43fc05c5d7d8bd32638487883386693640&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;verifyCall&quot;</span><span class="p">:</span> <span class="s2">&quot;VERIFY KEY&quot;</span><span class="p">,</span>
             <span class="p">})</span>
             <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
             <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
@@ -731,7 +731,7 @@
     <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">operator_wise_services</span><span class="p">(</span><span class="n">op_id</span><span class="p">):</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;api-key&quot;</span><span class="p">:</span> <span class="s2">&quot;TSXHVYAPI12784000&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;api-key&quot;</span><span class="p">:</span> <span class="s2">&quot;KEY&quot;</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">):</span>
         <span class="n">start_date</span> <span class="o">=</span> <span class="n">current_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
