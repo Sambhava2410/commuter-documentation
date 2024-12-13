@@ -1,0 +1,875 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sambhav2410.github.io/inventory/">
+      
+      
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Inventory - Commuter Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inventory-fetch-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Commuter Documentation" class="md-header__button md-logo" aria-label="Commuter Documentation" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Commuter Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inventory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Commuter Documentation" class="md-nav__button md-logo" aria-label="Commuter Documentation" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Commuter Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../login.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commuter" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API's Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory Caching Mechanism
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mantis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mantis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#its" class="md-nav__link">
+    <span class="md-ellipsis">
+      ITS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitla
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-queries-to-check-services-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Queries to check services count:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<script>
+    if (!localStorage.getItem('loggedIn')) {
+        window.location.href = "login.html"; // Redirect to login page if not logged in
+    }
+</script>
+
+<h1 id="inventory-fetch-logic">Inventory Fetch Logic</h1>
+<summary>This document outlines the inventory retrieval logic for various OTAs, including Mantis, Bitla, and ITS. It provides sample code and details about the third-party APIs used for fetching services. Additionally, it includes execution time estimates for retrieving data for a single day and for a 30-day period.</summary>
+
+<h2 id="mantis">Mantis</h2>
+<details>
+
+    <summary><strong>Mantis Inventory Fetch Logic</strong></summary>
+
+    <strong><h3>Logic Summary</h3></strong>
+    <strong>Function: fetch_and_attach_bus_route_id_by_state()</strong>
+    <p>This function is responsible for fetching bus inventory data for the next 30 days from a specified date and attaching the necessary route IDs to services in the database.<p>
+    <li>The core flow of the function is as follows:</li>
+    <ol>
+        <li><strong>Logging Initialization:</strong>
+            <ul>
+                <li>The function starts by recording the execution timestamp in a log file (mantis_execution_log.txt) to track when the script begins and ends.</li>
+            </ul>
+        </li>
+        <li><strong>Fetching City Pairs:</strong>
+            <ul>
+                <li>The function retrieves all city pairs (MentisCityPairs) from the database where a service is marked as found (service_found=True). These pairs represent the routes for which bus services are being fetched.
+                last updated city pairs count - 46805
+                </li>
+            </ul>
+        </li>
+        <li><strong>Loop for 30 Days:</strong>
+            <ul>
+                <li>The script will iterate over the next 30 days (from a given start date, suppose, "2024-12-14") and for each day, it will:</li>
+                <ol>
+                    <li>Prepare a formatted date for the journey.</li>
+                    <li>For each city pair (from city to city), make an GET API request to the Mantis Search API to fetch available bus routes.</li>
+                </ol>
+            </ul>
+        </li>
+        <li><strong>API Request to Mantis:</strong>
+            <ul>
+                <li>A GET request is made to the Mantis Search API with the fromCityId, toCityId, and journeyDate parameters.</li>
+                <li>If the response status is 200 OK, the function processes the buses returned in the response.</li>
+            </ul>
+        </li>
+        <li><strong>Token Management:</strong>
+            <ul>
+                <li>The function uses an access token to authenticate API requests. After every 3000 requests, a new access token is fetched using a helper function <code>fetch_access_token()</code>, ensuring the token is refreshed and valid.</li>
+            </ul>
+        </li>
+        <li><strong>Processing Bus Data:</strong>
+            <ul>
+                <li>For each bus in the response:</li>
+                <ol>
+                    <li>The unique bus_route_id (RouteBusId) is fetched.</li>
+                    <li>The bus type is checked to determine whether it's an AC bus.</li>
+                    <li>Additional bus details such as departure time, arrival time, duration, operator name, price, and pickup/drop-off points are collected.</li>
+                    <li>These details are then prepared to be saved in the database:</li>
+                    <ul>
+                        <li><code>updated_at</code>: Timestamp of the update.</li>
+                        <li><code>from_city_name</code>, <code>to_city_name</code>: City names.</li>
+                        <li><code>bus_route</code>: The unique bus route ID.</li>
+                        <li><code>ac</code>: Boolean indicating whether the bus is AC.</li>
+                        <li>Other relevant information is also captured in the meta field to store additional metadata.</li>
+                    </ul>
+                </ol>
+            </ul>
+        </li>
+        <li><strong>Database Updates:</strong>
+            <ul>
+                <li>Before creating or updating a record, the function checks if the service already exists in the MentisRoutePricing table for the given from_city_id, to_city_id, journey_date, and bus_route_id.</li>
+                <li>If there are duplicate entries for the same route, previous entries are marked as deleted (<code>is_deleted=True</code>).</li>
+                <li>The function then uses <code>update_or_create</code> to either update an existing record or create a new one if no matching record is found on the basis of these primary keys <code>from_city_id, to_city_id, journey_date, and bus_route_id.</code></li>
+            </ul>
+        </li>
+        <li><strong>Log Progress:</strong>
+            <ul>
+                <li>After processing each city pair, the script updates the <code>total_inventory_fetched_count</code>, printing the progress to the console.</li>
+                <li>The script also logs the time when it ends, completing the fetching of bus routes for the 30-day period.</li>
+            </ul>
+        </li>
+    </ol>
+
+
+
+
+    <strong>Performance Estimate</strong>
+    <ul>
+    <li><strong>For 1 day inventory: ~3 hours 20 minutes</strong></li>
+    <li><strong>For 30 days inventory: ~4 Days</strong></li>
+    </ul>
+    <br>
+
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://partnerapi.iamgds.com/ota/Search&quot;</span>
+
+<span class="k">def</span> <span class="nf">fetch_mantis_inventory</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch bus routes for the next `days` days and update the database.&quot;&quot;&quot;</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2024-12-14&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">city_pairs</span> <span class="o">=</span> <span class="n">MentisCityPairs</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">service_found</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">token_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span> <span class="s2">&quot;access-token&quot;</span><span class="p">:</span> <span class="s2">&quot;TOKEN&quot;</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">days</span><span class="p">):</span>
+        <span class="n">journey_date</span> <span class="o">=</span> <span class="p">(</span><span class="n">start_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">city_pairs</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">?fromCityId=</span><span class="si">{</span><span class="n">city</span><span class="o">.</span><span class="n">from_city_id</span><span class="si">}</span><span class="s2">&amp;toCityId=</span><span class="si">{</span><span class="n">city</span><span class="o">.</span><span class="n">to_city_id</span><span class="si">}</span><span class="s2">&amp;journeyDate=</span><span class="si">{</span><span class="n">journey_date</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+            <span class="n">token_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># Refresh token every 3000 requests</span>
+            <span class="k">if</span> <span class="n">token_count</span> <span class="o">==</span> <span class="mi">3000</span><span class="p">:</span>
+                <span class="n">headers</span><span class="p">[</span><span class="s2">&quot;access-token&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fetch_access_token</span><span class="p">()</span>
+                <span class="n">token_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+                <span class="n">process_bus_data</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span> <span class="n">journey_date</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">process_bus_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">journey_date</span><span class="p">,</span> <span class="n">city</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Process and save bus data from the response.&quot;&quot;&quot;</span>
+    <span class="n">buses</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Buses&quot;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">if</span> <span class="n">buses</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="n">buses</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;updated_at&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+                <span class="s1">&#39;from_city_name&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;FromCityName&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;to_city_name&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ToCityName&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;bus_route&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;RouteBusId&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;ac&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BusType&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;IsAC&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;AC&quot;</span><span class="p">,</span>
+                <span class="s1">&#39;pickup_points&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Pickups&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;drop_points&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Dropoffs&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BusStatus&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;operator_name&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CompanyName&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;duration&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Duration&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;arrival_time&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ArrTime&quot;</span><span class="p">),</span>
+                <span class="s1">&#39;dept_time&#39;</span><span class="p">:</span> <span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DeptTime&quot;</span><span class="p">),</span>
+            <span class="p">}</span>
+
+            <span class="c1"># Save/update the bus route data</span>
+            <span class="n">MentisRoutePricing</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update_or_create</span><span class="p">(</span>
+                <span class="n">from_city_id</span><span class="o">=</span><span class="n">city</span><span class="o">.</span><span class="n">from_city_id</span><span class="p">,</span>
+                <span class="n">to_city_id</span><span class="o">=</span><span class="n">city</span><span class="o">.</span><span class="n">to_city_id</span><span class="p">,</span>
+                <span class="n">journey_date</span><span class="o">=</span><span class="n">journey_date</span><span class="p">,</span>
+                <span class="n">bus_route</span><span class="o">=</span><span class="n">bus</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;RouteBusId&quot;</span><span class="p">),</span>
+                <span class="n">defaults</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
+            <span class="p">)</span>
+
+<span class="p">[</span><span class="n">Git</span> <span class="n">Repository</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">tinyurl</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">4</span><span class="n">hc3y4f3</span><span class="p">)</span>
+</code></pre></div>
+</details>
+
+<h2 id="its">ITS</h2>
+<details>
+
+    <summary><strong>ITS Inventory Fetch Logic</strong></summary>
+
+    <strong><h3>Logic Summary</h3></strong>
+    <strong>Function: <code>fetch_bus_routes()</code></strong>
+    <p>This function is responsible for fetching available bus routes for the next 30 days for city pairs from the CityPair model and storing them in the BusRoute model under its app.</p>
+    <li>The core flow of the function is as follows:</li>
+    <ol>
+        <li><strong>Logging and Initialization:</strong>
+            <ul>
+                <li>The script records the start and end time of the execution in a log file (its_one_day_execution_log.txt) to track the execution timeline.</li>
+                <li>It also initializes variables to track inventory count and handle any API request failures.</li>
+            </ul>
+        </li>
+        <li><strong>Fetching City Pairs:</strong>
+            <ul>
+                <li>The script retrieves all city pairs from the CityPair model. (count - 121,612)</li>
+                <li>For each city pair, a journey date is set, and an API call is made to fetch available routes for that date.</li>
+            </ul>
+        </li>
+        <li><strong>Making API Request:</strong>
+            <ul>
+                <li>The script makes a POST request to the API endpoint <strong>https://itsplatform.itspl.net/api/GetAvailableRoutes</strong>, passing the city pair details and journey date.</li>
+                <li>If the API response is successful (status code 200), it proceeds with processing the data.</li>
+            </ul>
+        </li>
+        <li><strong>Processing API Response:</strong>
+            <ul>
+                <li>The script processes the route data by extracting and formatting important details like route time, city time, arrival time, and other parameters.</li>
+                <li>It then stores or updates the data in the BusRoute model using <strong>update_or_create</strong> based on <code>city pair IDs, route ID, and journey date</code>.</li>
+            </ul>
+        </li>
+        <li><strong>Exception Handling:</strong>
+            <ul>
+                <li>If any errors occur during the API request or while processing the data, the script logs the exception and continues processing other city pairs.</li>
+            </ul>
+        </li>
+        <li><strong>Final Logging:</strong>
+            <ul>
+                <li>At the end of the script, the end time of the execution is recorded in the log file.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <strong>Executing Time Estimate</strong>
+    <ul>
+    <li><strong>For 1 day inventory: ~3 hours 20 minutes</strong></li>
+    <li><strong>For 30 days inventory: ~4 Days</strong></li>
+    </ul>
+    <br>
+
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="k">def</span> <span class="nf">fetch_bus_routes</span><span class="p">():</span>
+    <span class="n">log_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;its_one_day_execution_log.txt&quot;</span><span class="p">)</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file_path</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log_file</span><span class="p">:</span>
+        <span class="n">log_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Script started at: </span><span class="si">{</span><span class="n">start_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s2">&quot;2024-12-15&quot;</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">city_pairs</span> <span class="o">=</span> <span class="n">CityPair</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">city_pairs</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://itsplatform.itspl.net/api/GetAvailableRoutes&quot;</span>
+            <span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+                <span class="s2">&quot;fromID&quot;</span><span class="p">:</span> <span class="n">pair</span><span class="o">.</span><span class="n">from_city_id</span><span class="p">,</span>
+                <span class="s2">&quot;toID&quot;</span><span class="p">:</span> <span class="n">pair</span><span class="o">.</span><span class="n">to_city_id</span><span class="p">,</span>
+                <span class="s2">&quot;journeyDate&quot;</span><span class="p">:</span> <span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-%Y&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;verifyCall&quot;</span><span class="p">:</span> <span class="s2">&quot;VERIFY KEY&quot;</span><span class="p">,</span>
+            <span class="p">})</span>
+            <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">}</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AllRouteBusLists&quot;</span><span class="p">,</span> <span class="p">[])</span>
+
+                <span class="k">for</span> <span class="n">route_data</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="n">defaults</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s2">&quot;company_id&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CompanyID&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;from_city_name&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;FromCityName&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;to_city_name&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ToCityName&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;route_time&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;RouteTime&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;kilometer&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Kilometer&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;bus_type_name&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BusTypeName&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;ac_seat_rate&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AcSeatRate&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;non_ac_seat_rate&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;NonAcSeatRate&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;boarding_points&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BoardingPoints&quot;</span><span class="p">),</span>
+                        <span class="s2">&quot;dropping_points&quot;</span><span class="p">:</span> <span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;DroppingPoints&quot;</span><span class="p">),</span>
+                    <span class="p">}</span>
+                    <span class="n">BusRoute</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update_or_create</span><span class="p">(</span>
+                        <span class="n">from_city_id</span><span class="o">=</span><span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;FromCityId&quot;</span><span class="p">),</span>
+                        <span class="n">to_city_id</span><span class="o">=</span><span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ToCityId&quot;</span><span class="p">),</span>
+                        <span class="n">route_id</span><span class="o">=</span><span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;RouteID&quot;</span><span class="p">),</span>
+                        <span class="n">journey_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">route_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BookingDate&quot;</span><span class="p">),</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-%Y&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span>
+                        <span class="n">defaults</span><span class="o">=</span><span class="n">defaults</span><span class="p">,</span>
+                    <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exception:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file_path</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log_file</span><span class="p">:</span>
+        <span class="n">log_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Script ended at: </span><span class="si">{</span><span class="n">end_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">Git</span> <span class="n">Repository</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Sambhava2410</span><span class="o">/</span><span class="n">commuter_apis</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">develop_v3_copy</span><span class="o">/</span><span class="n">its</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">its_morning_script</span><span class="o">.</span><span class="n">py</span><span class="p">)</span>
+</code></pre></div>
+</details>
+
+<h2 id="bitla">Bitla</h2>
+<details>
+
+    <summary><strong>Bitla Inventory Fetch Logic</strong></summary>
+
+    <strong><h3>Logic Summary</h3></strong>
+    <strong>Function: operator_wise_services(op_id)</strong>
+    <p>This function fetches operator-specific service schedules for the next 30 days from an external API and updates the NewBitlaServices model with the fetched data, ensuring that duplicate or outdated records are removed.</p>
+    <li>The core flow of the function is as follows:</li>
+    <ol>
+        <li><strong>Logging and Initialization:</strong>
+            <ul>
+                <li>The function begins by iterating over the next 30 days, starting from the current date, and generates the appropriate URL for each day.</li>
+                <li>For each date, the function makes a GET request to the API to fetch the schedule data for the specified operator.</li>
+            </ul>
+        </li>
+        <li><strong>Processing API Response:</strong>
+            <ul>
+                <li>The function checks whether the response contains valid schedule data and ignores entries with statuses such as "Unavailable-Cancelled" or "Unavailable-SoldOut".</li>
+                <li>For each valid schedule, the function extracts essential details such as origin ID, destination ID, route name, travel date, bus type, departure and arrival times, and fare information.</li>
+            </ul>
+        </li>
+        <li><strong>Handling Bus Information:</strong>
+            <ul>
+                <li>If bus type information is available, it is parsed to extract details such as seat type and seat layout.</li>
+            </ul>
+        </li>
+        <li><strong>Service Record Management:</strong>
+            <ul>
+                <li>The function checks for existing service records in the NewBitlaServices model for the same service ID, route ID, travel ID, and city pair. If duplicates are found, it deletes them, keeping only the first record.</li>
+                <li>It then updates or creates a new service record in the database using <strong>update_or_create</strong> with the extracted details.</li>
+            </ul>
+        </li>
+        <li><strong>Exception Handling:</strong>
+            <ul>
+                <li>If an exception occurs during the execution, the error is logged and the function proceeds with the next iteration.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <strong>Function: operator_wise_inventory_store()</strong>
+    <p>This function executes the <code>operator_wise_services</code> function for each operator in the <code>BitlaOperator</code> model and logs the start and end time of the script execution.</p>
+    <li>The core flow of the function is as follows:</li>
+    <ol>
+        <li><strong>Logging and Initialization:</strong>
+            <ul>
+                <li>The function records the start and end time of the execution in a log file (<code>bitla_30_day_execution_log.txt</code>) to track the execution timeline.</li>
+                <li>It fetches all operators from the <code>BitlaOperator</code> model to process their schedules.</li>
+            </ul>
+        </li>
+        <li><strong>Processing Each Operator:</strong>
+            <ul>
+                <li>For each operator, the function calls <code>operator_wise_services</code> to fetch and update the service schedules for the next 30 days.</li>
+            </ul>
+        </li>
+        <li><strong>Final Logging:</strong>
+            <ul>
+                <li>At the end of the execution, the script logs the end time of the process to track the completion time.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <strong>Executing Time Estimate</strong>
+    <ul>
+    <li><strong>For 1 day inventory: ~3 hours 20 minutes</strong></li>
+    <li><strong>For 30 days inventory: ~4 Days</strong></li>
+    </ul>
+    <br>
+
+    <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">operator_wise_services</span><span class="p">(</span><span class="n">op_id</span><span class="p">):</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;api-key&quot;</span><span class="p">:</span> <span class="s2">&quot;KEY&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">):</span>
+        <span class="n">start_date</span> <span class="o">=</span> <span class="n">current_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">formatted_date</span> <span class="o">=</span> <span class="n">start_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://gds.ticketsimply.com/gds/api/operator_schedules/</span><span class="si">{</span><span class="n">op_id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">formatted_date</span><span class="si">}</span><span class="s2">.json&quot;</span>
+        <span class="n">schedule_details_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;result&quot;</span> <span class="ow">in</span> <span class="n">schedule_details_response</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>
+            <span class="n">schedule_details_json</span> <span class="o">=</span> <span class="n">schedule_details_response</span><span class="o">.</span><span class="n">text</span>
+            <span class="n">schedule_details_json</span> <span class="o">=</span> <span class="n">complex_json_to_normal_json</span><span class="p">(</span><span class="n">schedule_details_json</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">schedule</span> <span class="ow">in</span> <span class="n">schedule_details_json</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;Unavailable-Cancelled&quot;</span> <span class="ow">and</span> <span class="n">schedules</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;status&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;Unavailable-SoldOut&quot;</span><span class="p">:</span>
+                    <span class="n">origin_id</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;origin_id&quot;</span><span class="p">)</span>
+                    <span class="n">destination_id</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;destination_id&quot;</span><span class="p">)</span>
+                    <span class="n">schedule_id</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+                    <span class="n">name</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+                    <span class="n">travel_date</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;travel_date&quot;</span><span class="p">)</span>
+                    <span class="n">operator_service_name</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;operator_service_name&quot;</span><span class="p">)</span>
+                    <span class="n">route_id</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;route_id&quot;</span><span class="p">)</span>
+                    <span class="n">bus_info</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bus_type&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">bus_info</span><span class="p">:</span>
+                        <span class="n">details</span> <span class="o">=</span> <span class="n">bus_info</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span>
+                        <span class="n">seat_type</span> <span class="o">=</span> <span class="n">details</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="n">seat_layout_type</span> <span class="o">=</span> <span class="n">details</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">dep_time</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dep_time&quot;</span><span class="p">)</span>
+                    <span class="n">arr_time</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;arr_time&quot;</span><span class="p">)</span>
+                    <span class="n">duration</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">duration</span><span class="p">:</span>
+                        <span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+                        <span class="n">duration</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">duration</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">duration</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">fare_str</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fare_str&quot;</span><span class="p">)</span>
+                    <span class="n">boarding_stages</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;boarding_stages&quot;</span><span class="p">)</span>
+                    <span class="n">dropoff_stages</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dropoff_stages&quot;</span><span class="p">)</span>
+                    <span class="n">is_ac_bus</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;is_ac_bus&quot;</span><span class="p">)</span>
+                    <span class="n">travel_id</span> <span class="o">=</span> <span class="n">schedule</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;travel_id&quot;</span><span class="p">)</span>
+                    <span class="n">service_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">schedule_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="n">values</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s2">&quot;route_id&quot;</span><span class="p">:</span> <span class="n">route_id</span><span class="p">,</span>
+                        <span class="s2">&quot;travel_id&quot;</span><span class="p">:</span> <span class="n">travel_id</span><span class="p">,</span>
+                        <span class="s2">&quot;route&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+                        <span class="s2">&quot;operator_name&quot;</span><span class="p">:</span> <span class="n">operator_service_name</span><span class="p">,</span>
+                        <span class="s2">&quot;bus_type&quot;</span><span class="p">:</span> <span class="n">seat_type</span><span class="p">,</span>
+                        <span class="s2">&quot;seat_layout_type&quot;</span><span class="p">:</span> <span class="n">seat_layout_type</span><span class="p">,</span>
+                        <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="n">dep_time</span><span class="p">,</span>
+                        <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="n">arr_time</span><span class="p">,</span>
+                        <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="n">duration</span><span class="p">,</span>
+                        <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">fare_str</span><span class="p">,</span>
+                        <span class="s2">&quot;pickup_points&quot;</span><span class="p">:</span> <span class="n">boarding_stages</span><span class="p">,</span>
+                        <span class="s2">&quot;drop_points&quot;</span><span class="p">:</span> <span class="n">dropoff_stages</span><span class="p">,</span>
+                        <span class="s2">&quot;is_ac&quot;</span><span class="p">:</span> <span class="n">is_ac_bus</span><span class="p">,</span>
+                    <span class="p">}</span>
+                    <span class="n">meta_fields</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="n">key</span><span class="p">:</span> <span class="n">value</span>
+                        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">schedule</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">values</span>
+                    <span class="p">}</span>
+                    <span class="n">values</span><span class="p">[</span><span class="s2">&quot;meta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_fields</span>
+                    <span class="n">existing_services</span> <span class="o">=</span> <span class="n">NewBitlaServices</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+                        <span class="n">service_id</span><span class="o">=</span><span class="n">service_id</span><span class="p">,</span>
+                        <span class="n">route_id</span><span class="o">=</span><span class="n">route_id</span><span class="p">,</span>
+                        <span class="n">travel_id</span><span class="o">=</span><span class="n">travel_id</span><span class="p">,</span>
+                        <span class="n">from_city_id</span><span class="o">=</span><span class="n">origin_id</span><span class="p">,</span>
+                        <span class="n">to_city_id</span><span class="o">=</span><span class="n">destination_id</span><span class="p">,</span>
+                        <span class="n">travel_date</span><span class="o">=</span><span class="n">travel_date</span><span class="p">,</span>
+                    <span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">existing_services</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                        <span class="c1"># Retain only one record and delete duplicates</span>
+                        <span class="n">service_to_keep</span> <span class="o">=</span> <span class="n">existing_services</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>  <span class="c1"># Keep the first record</span>
+                        <span class="n">duplicates</span> <span class="o">=</span> <span class="n">existing_services</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">service_to_keep</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                        <span class="n">duplicates</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span> 
+                    <span class="n">bitla_obj</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> <span class="n">NewBitlaServices</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update_or_create</span><span class="p">(</span>
+                        <span class="n">service_id</span><span class="o">=</span><span class="n">service_id</span><span class="p">,</span>
+                        <span class="n">route_id</span><span class="o">=</span><span class="n">route_id</span><span class="p">,</span>
+                        <span class="n">travel_id</span><span class="o">=</span><span class="n">travel_id</span><span class="p">,</span>
+                        <span class="n">from_city_id</span><span class="o">=</span><span class="n">origin_id</span><span class="p">,</span>
+                        <span class="n">to_city_id</span><span class="o">=</span><span class="n">destination_id</span><span class="p">,</span>
+                        <span class="n">travel_date</span><span class="o">=</span><span class="n">travel_date</span><span class="p">,</span>
+                        <span class="n">defaults</span><span class="o">=</span><span class="n">values</span><span class="p">,</span>
+                    <span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">operator_wise_inventory_store</span><span class="p">():</span>
+    <span class="n">log_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;bitla_30_day_execution_log.txt&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Record the start time</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file_path</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log_file</span><span class="p">:</span>
+        <span class="n">log_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Script started at: </span><span class="si">{</span><span class="n">start_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">operators</span> <span class="o">=</span> <span class="n">BitlaOperator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">operators</span><span class="p">:</span>
+        <span class="n">service</span> <span class="o">=</span> <span class="n">operator_wise_services</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">travel_id</span><span class="p">)</span>
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">log_file_path</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">log_file</span><span class="p">:</span>
+        <span class="n">log_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Script ended at: </span><span class="si">{</span><span class="n">end_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Git</span> <span class="n">Repository</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Sambhava2410</span><span class="o">/</span><span class="n">commuter_apis</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">develop_v3_copy</span><span class="o">/</span><span class="n">bitla</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">service_store</span><span class="o">.</span><span class="n">py</span><span class="p">)</span>
+</code></pre></div>
+</details>
+
+<h2 id="sql-queries-to-check-services-count">SQL Queries to check services count:</h2>
+<details>
+    <p>
+    It is essential to regularly verify the existence of services in your system to ensure that your inventory is up to date. To do this, you should run the following SQL queries every few days to check the number of services for different dates. This will help you track if any services are missing or if there are discrepancies in your data.
+    For optimal performance, you can execute these queries in multiple threads to reduce the overall execution time, especially when dealing with large datasets.
+    </p>
+    <summary>Click to expand</summary>
+
+        <ol>
+            <li><strong>To check the count of services in <code>bitla_newbitlaservices</code>:</strong></li>
+        </ol>
+        <pre>
+            <code>
+    SELECT travel_date, COUNT(*) AS total_services
+    FROM bitla_newbitlaservices 
+    GROUP BY travel_date;
+                </code>
+            </pre>
+
+            <ol>
+                <li><strong>To check the count of services in <code>mentis_mentisroutepricing</code>:</strong></li>
+            </ol>
+            <pre>
+                <code>
+    SELECT journey_date, COUNT(*) 
+    FROM mentis_mentisroutepricing 
+    GROUP BY journey_date;
+                </code>
+            </pre>
+
+            <ol>
+                <li><strong>To check the count of services in <code>its_busroute</code>:</strong></li>
+            </ol>
+            <pre>
+                <code>
+    SELECT journey_date, COUNT(*) 
+    FROM its_busroute ib 
+    GROUP BY journey_date;
+                </code>
+            </pre>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

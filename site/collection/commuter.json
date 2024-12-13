@@ -1,0 +1,1081 @@
+{
+	"info": {
+		"_postman_id": "2afebbea-7127-44db-8157-422735945357",
+		"name": "Commuter Api's Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29453614",
+		"_collection_link": "https://solar-moon-996613.postman.co/workspace/b1023776-1b26-4c6c-80d8-b31217d10fa3/collection/29453614-2afebbea-7127-44db-8157-422735945357?action=share&source=collection_link&creator=29453614"
+	},
+	"item": [
+		{
+			"name": "analytics.apnibus.com",
+			"item": [
+				{
+					"name": "https://analytics.apnibus.com/analytics/record-event/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "host",
+								"value": "analytics.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 912512e9e3f8fe22153f06403050b9e313b1d0bf"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"event_type\":\"generate_otp\",\"data\":{\"number\":\"9685338171\",\"from\":\"App\",\"timestamp\":\"2024-12-13T12:59:21.000Z\",\"session_id\":\"9a6f64a2-2624-4cf7-887a-915c815f0a07\",\"mobile\":\"9685338171\"},\"session_id\":\"9a6f64a2-2624-4cf7-887a-915c815f0a07\"}"
+						},
+						"url": "https://analytics.apnibus.com/analytics/record-event/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "commuter.apis.apnibus.com",
+			"item": [
+				{
+					"name": "https://commuter.apis.apnibus.com/auth/generate-otp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userContact\":\"9685338171\",\"userLanguage\":\"1\"}"
+						},
+						"url": "https://commuter.apis.apnibus.com/auth/generate-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/auth/verify-otp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"userContact\":\"9685338171\",\"otp\":2611}"
+						},
+						"url": "https://commuter.apis.apnibus.com/auth/verify-otp"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/user/{{param1}}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": "https://commuter.apis.apnibus.com/user/145ce7f3-323a-4f97-94e2-d3f3424959fa"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/ticket/v2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": {
+							"raw": "https://commuter.apis.apnibus.com/ticket/v2?perPage=100",
+							"protocol": "https",
+							"host": [
+								"commuter",
+								"apis",
+								"apnibus",
+								"com"
+							],
+							"path": [
+								"ticket",
+								"v2"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/ticket/upcoming-ticket",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": "https://commuter.apis.apnibus.com/ticket/upcoming-ticket"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/user/user-ticket-saving",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": "https://commuter.apis.apnibus.com/user/user-ticket-saving"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/history/recommended-journey",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": "https://commuter.apis.apnibus.com/history/recommended-journey"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/bus-search/user-bus-search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": {
+							"raw": "https://commuter.apis.apnibus.com/bus-search/user-bus-search?fromTownId=a5a24f6e-cde3-11ec-a96e-e71112ec6aeb&toTownId=14e6e936-cd33-11ec-a96e-e71112ec6aeb",
+							"protocol": "https",
+							"host": [
+								"commuter",
+								"apis",
+								"apnibus",
+								"com"
+							],
+							"path": [
+								"bus-search",
+								"user-bus-search"
+							],
+							"query": [
+								{
+									"key": "fromTownId",
+									"value": "a5a24f6e-cde3-11ec-a96e-e71112ec6aeb"
+								},
+								{
+									"key": "toTownId",
+									"value": "14e6e936-cd33-11ec-a96e-e71112ec6aeb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/bus-search/v2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": {
+							"raw": "https://commuter.apis.apnibus.com/bus-search/v2?fromTownId=a5a24f6e-cde3-11ec-a96e-e71112ec6aeb&toTownId=14e6e936-cd33-11ec-a96e-e71112ec6aeb&journeyDate=2024-12-14&fromDb=false",
+							"protocol": "https",
+							"host": [
+								"commuter",
+								"apis",
+								"apnibus",
+								"com"
+							],
+							"path": [
+								"bus-search",
+								"v2"
+							],
+							"query": [
+								{
+									"key": "fromTownId",
+									"value": "a5a24f6e-cde3-11ec-a96e-e71112ec6aeb"
+								},
+								{
+									"key": "toTownId",
+									"value": "14e6e936-cd33-11ec-a96e-e71112ec6aeb"
+								},
+								{
+									"key": "journeyDate",
+									"value": "2024-12-14"
+								},
+								{
+									"key": "fromDb",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/bus-search/v2/layout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"source\":10,\"commuterId\":\"145ce7f3-323a-4f97-94e2-d3f3424959fa\",\"serviceId\":\"abdf164a-be27-4878-88c7-7c7486c65ec7\",\"busFormat\":\"2+1\",\"fromTownId\":\"a5a24f6e-cde3-11ec-a96e-e71112ec6aeb\",\"toTownId\":\"14e6e936-cd33-11ec-a96e-e71112ec6aeb\",\"journeyDate\":\"2024-12-14\",\"fromStationCode\":\"528\",\"toStationCode\":\"1353\"}"
+						},
+						"url": "https://commuter.apis.apnibus.com/bus-search/v2/layout"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/towns/get-stops",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": {
+							"raw": "https://commuter.apis.apnibus.com/towns/get-stops?fromTownId=a5a24f6e-cde3-11ec-a96e-e71112ec6aeb&toTownId=14e6e936-cd33-11ec-a96e-e71112ec6aeb&journeyDate=2024-12-14&serviceId=abdf164a-be27-4878-88c7-7c7486c65ec7&source=10&tripNumber=null&busType=2%2B1&fromStationCode=528&toStationCode=1353",
+							"protocol": "https",
+							"host": [
+								"commuter",
+								"apis",
+								"apnibus",
+								"com"
+							],
+							"path": [
+								"towns",
+								"get-stops"
+							],
+							"query": [
+								{
+									"key": "fromTownId",
+									"value": "a5a24f6e-cde3-11ec-a96e-e71112ec6aeb"
+								},
+								{
+									"key": "toTownId",
+									"value": "14e6e936-cd33-11ec-a96e-e71112ec6aeb"
+								},
+								{
+									"key": "journeyDate",
+									"value": "2024-12-14"
+								},
+								{
+									"key": "serviceId",
+									"value": "abdf164a-be27-4878-88c7-7c7486c65ec7"
+								},
+								{
+									"key": "source",
+									"value": "10"
+								},
+								{
+									"key": "tripNumber",
+									"value": "null"
+								},
+								{
+									"key": "busType",
+									"value": "2%2B1"
+								},
+								{
+									"key": "fromStationCode",
+									"value": "528"
+								},
+								{
+									"key": "toStationCode",
+									"value": "1353"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"amountWithoutDiscount\":\"350.00\",\"rewardId\":null,\"rescheduleTicketId\":\"null\",\"onBookingReward\":false,\"isReschedule\":false,\"passId\":null,\"ticketSourcing\":2,\"seatBooked\":[{\"seatPrice\":350,\"serviceTax\":17}],\"sourcePassDiscount\":10}"
+						},
+						"url": "https://commuter.apis.apnibus.com/coupon"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/ticket/passenger-data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": {
+							"raw": "https://commuter.apis.apnibus.com/ticket/passenger-data?",
+							"protocol": "https",
+							"host": [
+								"commuter",
+								"apis",
+								"apnibus",
+								"com"
+							],
+							"path": [
+								"ticket",
+								"passenger-data"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/ticket/v2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"ticketServiceId\":\"abdf164a-be27-4878-88c7-7c7486c65ec7\",\"ticketSeatBooked\":[{\"seatType\":\"Seater\",\"seatTypeCode\":1,\"seatPrice\":350,\"seatNumber\":\"2\",\"passengerName\":\"sambhav \",\"passengerContact\":\"9685338171\",\"passengerAge\":25,\"passengerGender\":\"Male\",\"passengerGenderCode\":1,\"serviceTax\":17}],\"ticketStatus\":1,\"ticketTotalAmount\":367,\"fromTownId\":\"a5a24f6e-cde3-11ec-a96e-e71112ec6aeb\",\"toTownId\":\"14e6e936-cd33-11ec-a96e-e71112ec6aeb\",\"payableAmount\":367,\"boardingPointId\":\"f1faed5c-86e5-4924-9004-ae65dce307fc\",\"droppingPointId\":\"cf65d978-c73e-4caa-ad5a-873ea994387d\",\"ticketJourneyDate\":\"2024-12-14 04:00:00\",\"ticketSource\":10,\"tripNumber\":null,\"ticketTax\":{\"gst\":17,\"discount\":0,\"fare\":350,\"serviceCharge\":0},\"bookingId\":155327,\"ticketId\":null,\"ticketRewardId\":null,\"ticketPassRewardId\":null,\"ticketSourcing\":2,\"ticketWithPass\":false}"
+						},
+						"url": "https://commuter.apis.apnibus.com/ticket/v2"
+					},
+					"response": []
+				},
+				{
+					"name": "https://commuter.apis.apnibus.com/ticket/passenger-data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "host",
+								"value": "commuter.apis.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"passengerData\":[{\"passengerName\":\"sambhav \",\"passengerAge\":25,\"passengerGenderCode\":1}]}"
+						},
+						"url": "https://commuter.apis.apnibus.com/ticket/passenger-data"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gamification.apnibus.com",
+			"item": [
+				{
+					"name": "https://gamification.apnibus.com/profile/utilized-points",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "gamification.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": "https://gamification.apnibus.com/profile/utilized-points"
+					},
+					"response": []
+				},
+				{
+					"name": "https://gamification.apnibus.com/profile/{{param1}}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "gamification.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": "https://gamification.apnibus.com/profile/145ce7f3-323a-4f97-94e2-d3f3424959fa"
+					},
+					"response": []
+				},
+				{
+					"name": "https://gamification.apnibus.com/rewards/best-V2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "gamification.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": {
+							"raw": "https://gamification.apnibus.com/rewards/best-V2?ticketAmount=5000&ticketCount=16",
+							"protocol": "https",
+							"host": [
+								"gamification",
+								"apnibus",
+								"com"
+							],
+							"path": [
+								"rewards",
+								"best-V2"
+							],
+							"query": [
+								{
+									"key": "ticketAmount",
+									"value": "5000"
+								},
+								{
+									"key": "ticketCount",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://gamification.apnibus.com/profile/my-rewards-V2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "gamification.apnibus.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDVjZTdmMy0zMjNhLTRmOTctOTRlMi1kM2YzNDI0OTU5ZmEiLCJpYXQiOjE3MzQwOTQ3NjMsImV4cCI6MTc2NTYzMDc2M30.u-_dO0w0d3L25caq5Ty20N1emHIIi5LquVZLNxR5MxFVIczpODCmd3-AiWJRZaAqMFhROgeBc6aGkqgVzFOzOQ"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-site"
+							}
+						],
+						"url": {
+							"raw": "https://gamification.apnibus.com/profile/my-rewards-V2?ticketCount=16&ticketSource=10&isAc=true&ticketAmount=0",
+							"protocol": "https",
+							"host": [
+								"gamification",
+								"apnibus",
+								"com"
+							],
+							"path": [
+								"profile",
+								"my-rewards-V2"
+							],
+							"query": [
+								{
+									"key": "ticketCount",
+									"value": "16"
+								},
+								{
+									"key": "ticketSource",
+									"value": "10"
+								},
+								{
+									"key": "isAc",
+									"value": "true"
+								},
+								{
+									"key": "ticketAmount",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

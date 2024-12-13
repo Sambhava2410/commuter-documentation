@@ -1,3 +1,9 @@
+<script>
+    if (!localStorage.getItem('loggedIn')) {
+        window.location.href = "login.html"; // Redirect to login page if not logged in
+    }
+</script>
+
 # Inventory Fetch Logic
 
 <summary>This document outlines the inventory retrieval logic for various OTAs, including Mantis, Bitla, and ITS. It provides sample code and details about the third-party APIs used for fetching services. Additionally, it includes execution time estimates for retrieving data for a single day and for a 30-day period.</summary>
