@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script>
+        function checkPin() {
+            const enteredPin = document.getElementById('pin').value;
+            const correctPin = '1234';  // Replace with your PIN or password
+
+            if (enteredPin === correctPin) {
+                window.location.href = 'index.html';  // Redirect to your main documentation page
+            } else {
+                alert('Incorrect PIN');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Login to Access Documentation</h2>
+    <input type="password" id="pin" placeholder="Enter PIN" />
+    <button onclick="checkPin()">Submit</button>
+</body>
+</html>
