@@ -1,0 +1,25 @@
+site_name: Commuter Documentation
+site_url: https://sambhav2410.github.io/commuter_apis/
+
+nav:
+  - Home: index.md
+  - Inventory Caching Mechanism: inventory.md
+  - API's Documentation: commuter.md
+  - About: about.md
+
+theme:
+  name: material
+  primary_color: "#008000"
+  favicon: images/favicon.ico
+  logo: images/logo.png
+
+
+extra_css:
+  - assets/stylesheets/custom.css
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
