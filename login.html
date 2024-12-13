@@ -2,23 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <script>
-        function checkPin() {
-            const enteredPin = document.getElementById('pin').value;
-            const correctPin = '1234';  // Replace with your PIN or password
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Apnibus Commuter Documentation</title>
+    <!-- Add external or internal CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
 
-            if (enteredPin === correctPin) {
-                window.location.href = 'index.html';  // Redirect to your main documentation page
+        h1 {
+            color: #008000;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .login-container label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: block;
+            text-align: left;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .login-container button {
+            background-color: #008000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #006600;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Apnibus Commuter Documentation</h1>
+    <div class="login-container">
+        <img src="images/logo.png" alt="Apnibus Logo">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br>
+
+            <button type="button" onclick="login()">Login</button>
+            <div id="errorMessage" class="error"></div>
+        </form>
+    </div>
+
+    <script>
+        // Function to handle login logic
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Check if credentials are correct
+            if (username === 'apnibus' && password === 'apnibus') {
+                // Set the login flag in localStorage
+                localStorage.setItem('loggedIn', 'true');
+                // Redirect to the home page
+                window.location.href = "index.html";
             } else {
-                alert('Incorrect PIN');
+                // Display error message
+                document.getElementById('errorMessage').textContent = "Invalid username or password.";
             }
         }
     </script>
-</head>
-<body>
-    <h2>Login to Access Documentation</h2>
-    <input type="password" id="pin" placeholder="Enter PIN" />
-    <button onclick="checkPin()">Submit</button>
 </body>
 </html>

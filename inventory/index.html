@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://sambhav2410.github.io/commuter_apis/inventory/">
+        <link rel="canonical" href="https://sambhav2410.github.io/inventory/">
       
       
-        <link rel="prev" href="../commuter/">
-      
-      
-        <link rel="next" href="../about/">
       
       
       <link rel="icon" href="../images/favicon.ico">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Inventory Caching Mechanism - Commuter Documentation</title>
+        <title>Inventory - Commuter Documentation</title>
       
     
     
@@ -101,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Inventory Caching Mechanism
+              Inventory
             
           </span>
         </div>
@@ -193,7 +189,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../login.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -213,7 +209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commuter/" class="md-nav__link">
+      <a href="../commuter" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -230,30 +226,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Inventory Caching Mechanism
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -262,62 +238,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mantis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mantis
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#its" class="md-nav__link">
-    <span class="md-ellipsis">
-      ITS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bitla" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bitla
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sql-queries-to-check-services-count" class="md-nav__link">
-    <span class="md-ellipsis">
-      SQL Queries to check services count:
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -329,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../about" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -418,6 +338,12 @@
                 
                   
 
+
+<script>
+    if (!localStorage.getItem('loggedIn')) {
+        window.location.href = "login.html"; // Redirect to login page if not logged in
+    }
+</script>
 
 <h1 id="inventory-fetch-logic">Inventory Fetch Logic</h1>
 <summary>This document outlines the inventory retrieval logic for various OTAs, including Mantis, Bitla, and ITS. It provides sample code and details about the third-party APIs used for fetching services. Additionally, it includes execution time estimates for retrieving data for a single day and for a 30-day period.</summary>
