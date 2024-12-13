@@ -3,8 +3,8 @@ site_url: https://sambhav2410.github.io/commuter_apis/
 
 nav:
   - Home: index.md
-  - Inventory Caching Mechanism: inventory.md
   - API's Documentation: commuter.md
+  - Inventory Caching Mechanism: inventory.md
   - About: about.md
 
 theme:
